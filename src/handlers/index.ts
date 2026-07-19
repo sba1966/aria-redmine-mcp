@@ -16,6 +16,8 @@ import { createTimeEntriesHandlers } from "./time_entries.js";
 import { createUserHandlers } from "./users.js";
 import { createLlmInteractionsHandlers } from "./llm_interactions.js";
 import { createCatalogHandlers } from "./catalog.js";
+import { createWikiHandlers } from "./wiki.js";
+import { createNewsHandlers } from "./news.js";
 import { formatAllowedStatuses } from "../formatters/projects.js"; // Import the new formatter
 
 // Create handler context
@@ -38,6 +40,8 @@ const timeEntriesHandlers = createTimeEntriesHandlers(context);
 const usersHandlers = createUserHandlers(context);
 const llmInteractionsHandlers = createLlmInteractionsHandlers(context);
 const catalogHandlers = createCatalogHandlers(context);
+const wikiHandlers = createWikiHandlers(context);
+const newsHandlers = createNewsHandlers(context);
 
 // Create handler map
 const handlers = {
@@ -47,6 +51,8 @@ const handlers = {
   ...usersHandlers,
   ...llmInteractionsHandlers,
   ...catalogHandlers,
+  ...wikiHandlers,
+  ...newsHandlers,
 };
 
 // Available tools list

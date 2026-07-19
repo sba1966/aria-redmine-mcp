@@ -4,6 +4,8 @@ import { TimeEntriesClient } from "./time_entries.js";
 import { UsersClient } from "./users.js";
 import { LlmInteractionsClient } from "./llm_interactions.js";
 import { CatalogClient } from "./catalog.js";
+import { WikiClient } from "./wiki.js";
+import { NewsClient } from "./news.js";
 import { RedmineApiError } from "./base.js";
 
 /**
@@ -16,6 +18,8 @@ export class RedmineClient {
   public readonly users: UsersClient;
   public readonly llmInteractions: LlmInteractionsClient;
   public readonly catalog: CatalogClient;
+  public readonly wiki: WikiClient;
+  public readonly news: NewsClient;
 
   constructor() {
     this.issues = new IssuesClient();
@@ -24,6 +28,8 @@ export class RedmineClient {
     this.users = new UsersClient();
     this.llmInteractions = new LlmInteractionsClient();
     this.catalog = new CatalogClient();
+    this.wiki = new WikiClient();
+    this.news = new NewsClient();
   }
 }
 

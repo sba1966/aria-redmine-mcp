@@ -36,3 +36,18 @@ export {
   formatCatalogItem,
   formatCatalogSearchResults,
 } from "./catalog.js";
+
+export {
+  formatWikiPage,
+  formatWikiPages,
+  formatWikiPageResult,
+  formatWikiPageDeleted,
+} from "./wiki.js";
+
+export {
+  formatNewsEntry,
+  formatNewsList,
+  formatNewsResult,
+  formatNewsDeleted,
+  formatNewsUpdated,
+} from "./news.js";

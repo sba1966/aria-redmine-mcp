@@ -8,3 +8,5 @@ export * from "./time_entries/index.js";
 export * from "./users/index.js";
 export * from "./llm_interactions/index.js";
 export * from "./catalog/index.js";
+export * from "./wiki/index.js";
+export * from "./news/index.js";

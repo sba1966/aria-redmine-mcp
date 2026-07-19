@@ -50,3 +50,19 @@ export {
   CATALOG_SEARCH_TOOL,
   CATALOG_GET_ITEM_TOOL,
 } from "./catalog.js";
+
+// Wiki tools
+export {
+  WIKI_LIST_PAGES_TOOL,
+  WIKI_GET_PAGE_TOOL,
+  WIKI_CREATE_OR_UPDATE_PAGE_TOOL,
+  WIKI_DELETE_PAGE_TOOL,
+} from "./wiki.js";
+
+// News tools
+export {
+  NEWS_LIST_TOOL,
+  NEWS_CREATE_TOOL,
+  NEWS_UPDATE_TOOL,
+  NEWS_DELETE_TOOL,
+} from "./news.js";
