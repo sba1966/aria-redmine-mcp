@@ -53,6 +53,87 @@ Supports stable resources from Redmine REST API:
   - Custom field support
 - Delete Time Entries
 
+#### Enumerations
+
+- List Trackers — returns all tracker types (e.g. Bug, Feature, Story) with their IDs
+- List Issue Statuses — returns all globally configured issue statuses with their IDs
+- List Issue Priorities — returns all issue priority values with their IDs
+- List Time Entry Activities — returns all time entry activity values with their IDs
+
+## Available Tools
+
+### Enumerations
+
+Use these tools to look up global Redmine enumeration IDs before creating or updating issues and time entries.
+
+#### `list_trackers`
+
+**Endpoint:** `GET /trackers.json`
+
+**Description:** Returns all tracker types configured in this Redmine instance. Call this before creating or updating an issue to obtain the correct `tracker_id`.
+
+**Parameters:** none
+
+**Example response:**
+```
+- id: 1, name: "Bug"
+- id: 2, name: "Feature"
+- id: 5, name: "Story"
+```
+
+---
+
+#### `list_issue_statuses`
+
+**Endpoint:** `GET /issue_statuses.json`
+
+**Description:** Returns all globally configured issue statuses. Each entry includes whether the status is a closed status. Call this before creating or updating an issue to obtain the correct `status_id`.
+
+**Parameters:** none
+
+**Example response:**
+```
+- id: 1, name: "New", is_closed: false
+- id: 2, name: "In Progress", is_closed: false
+- id: 5, name: "Closed", is_closed: true
+```
+
+---
+
+#### `list_issue_priorities`
+
+**Endpoint:** `GET /enumerations/issue_priorities.json`
+
+**Description:** Returns all issue priority values configured in this Redmine instance. Call this before creating or updating an issue to obtain the correct `priority_id`.
+
+**Parameters:** none
+
+**Example response:**
+```
+- id: 1, name: "Low"
+- id: 2, name: "Normal", is_default: true
+- id: 3, name: "High"
+```
+
+---
+
+#### `list_time_entry_activities`
+
+**Endpoint:** `GET /enumerations/time_entry_activities.json`
+
+**Description:** Returns all time entry activity values configured in this Redmine instance. Call this before logging time to obtain the correct `activity_id`.
+
+**Parameters:** none
+
+**Example response:**
+```
+- id: 8, name: "Design"
+- id: 9, name: "Development", is_default: true
+- id: 10, name: "Testing"
+```
+
+---
+
 ## Usage with Claude
 
 To use this server with Claude, configure it as follows:
