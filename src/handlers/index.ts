@@ -18,6 +18,7 @@ import { createLlmInteractionsHandlers } from "./llm_interactions.js";
 import { createCatalogHandlers } from "./catalog.js";
 import { createWikiHandlers } from "./wiki.js";
 import { createNewsHandlers } from "./news.js";
+import { createEnumerationsHandlers } from "./enumerations.js";
 import { formatAllowedStatuses } from "../formatters/projects.js"; // Import the new formatter
 
 // Create handler context
@@ -42,6 +43,7 @@ const llmInteractionsHandlers = createLlmInteractionsHandlers(context);
 const catalogHandlers = createCatalogHandlers(context);
 const wikiHandlers = createWikiHandlers(context);
 const newsHandlers = createNewsHandlers(context);
+const enumerationsHandlers = createEnumerationsHandlers(context);
 
 // Create handler map
 const handlers = {
@@ -53,6 +55,7 @@ const handlers = {
   ...catalogHandlers,
   ...wikiHandlers,
   ...newsHandlers,
+  ...enumerationsHandlers,
 };
 
 // Available tools list
